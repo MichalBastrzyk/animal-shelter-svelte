@@ -5,5 +5,7 @@
 
 <main class="dark">
 	<Navbar />
-	<slot />
+	<div class="max-w-5xl m-auto px-3">
+		<slot />
+	</div>
 </main>
