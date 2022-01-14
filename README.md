@@ -1,35 +1,31 @@
-# create-svelte
+# Animal Shelter webpage
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+Simple animal shelter website built with sveltekit.\
+Inspired by [Vinnie Brasco design](https://dribbble.com/shots/4094909-Shelter)
 
-## Creating a project
+## Get started
 
-If you're seeing this, you've probably already done this step. Congrats!
+First clone my repo
 
 ```bash
-# create a new project in the current directory
-npm init svelte@next
+git clone https://github.com/Bachalo/animal-shelter-svelte.git
 
-# create a new project in my-app
-npm init svelte@next my-app
+cd animal-shelter-svelte
 ```
 
-> Note: the `@next` is temporary
+Then install all of node dependencies.
 
-## Developing
+```bash
+npm i
+```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To start development server do.
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+To build website do.
 
 ```bash
 npm run build
