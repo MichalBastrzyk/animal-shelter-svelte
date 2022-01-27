@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import NavLink from './NavLink.svelte';
 
 	$: route = $page.url.pathname;
 	// List of routes where adaptive navbar will work in
@@ -27,10 +28,10 @@
 			</h1>
 		</a>
 		<ul class="flex justify-around m-2">
-			<li class="mx-2"><a href="/about">About us</a></li>
-			<li class="mx-2"><a href="/pets">Our pets</a></li>
-			<li class="mx-2"><a href="/help-us">Help us</a></li>
-			<li class="mx-2"><a href="/contact">Contact</a></li>
+			<li class="mx-2"><NavLink href="/about">About us</NavLink></li>
+			<li class="mx-2"><NavLink href="/pets">Our pets</NavLink></li>
+			<li class="mx-2"><NavLink href="/help-us">Help us</NavLink></li>
+			<li class="mx-2"><NavLink href="/contact">Contact</NavLink></li>
 		</ul>
 	</nav>
 </header>
