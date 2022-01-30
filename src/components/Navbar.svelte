@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	import NavLink from './NavLink.svelte';
 
 	$: route = $page.url.pathname;
@@ -7,11 +8,15 @@
 	const enabledRoutes = ['/'];
 	// Set initial style based on current route
 	$: filledBg = !enabledRoutes.includes(route);
+
+	onMount(() => {
+		if (enabledRoutes.includes(route)) filledBg = window.scrollY >= window.innerHeight - 200;
+	});
 </script>
 
 <svelte:window
 	on:scroll={() => {
-		// If current route is enable to use adaptive navbar change style through an event listser
+		// If current route is enable to use adaptive navbar change style through an event lister
 		if (enabledRoutes.includes(route)) filledBg = window.scrollY >= window.innerHeight - 200;
 	}}
 />
