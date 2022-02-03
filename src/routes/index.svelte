@@ -1,7 +1,8 @@
 <script>
+	import { goto } from '$app/navigation';
 	import Layout from '../components/Layout.svelte';
 	import ActionButton from '../components/ActionButton.svelte';
-	import Card from '../components/Card.svelte';
+	import CardSwiperApi from '../components/CardSwiperAPI.svelte';
 </script>
 
 <svelte:head>
@@ -9,7 +10,7 @@
 </svelte:head>
 
 <div class="flex justify-center items-center top-0 left-0 h-screen gradient-bg -z-10">
-	<div class="flex text-white gap-4 sm:flex-col lg:flex-row">
+	<div class="flex text-white gap-4 flex-col-reverse justify-center items-center lg:flex-row">
 		<Layout>
 			<h1 class="text-4xl font-serif">Not only people need a house</h1>
 			<p class="mx-1 my-5">
@@ -45,23 +46,13 @@
 		</p>
 	</section>
 </Layout>
-<Layout bgColor="bg-bg-gray">
-	<h1>Our friends who are looking for house</h1>
-	<div class="lg:flex">
-		<Card src="/images/our_pets/big_husky.jpg" alt="big husky" title="Someting something" />
-		<Card
-			src="/images/our_pets/dog_chilling_black.jpg"
-			alt="black dog"
-			title="Someting something"
-		/>
-		<Card
-			src="/images/our_pets/dog_holding_flower.jpg"
-			alt="labrodor holding flower"
-			title="Someting something"
-		/>
+<section class="bg-bg-gray py-8 lg:px-16">
+	<div class="max-w-7xl m-auto justify-center items-center text-center">
+		<h1 class="text-3xl font-serif font-black">Our friends who are looking for house</h1>
+		<CardSwiperApi />
+		<ActionButton on:click={() => goto('/pets')}>Get to know the rest</ActionButton>
 	</div>
-	<ActionButton>Get to know the rest</ActionButton>
-</Layout>
+</section>
 <Layout>
 	<h1>You can help our shelter by</h1>
 </Layout>
