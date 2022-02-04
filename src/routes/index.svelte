@@ -33,7 +33,7 @@
 	<img
 		src="images/dog-outsitde-car-window.jpg"
 		alt="Dog outside car window"
-		class="rounded-xl shaodw-xl max-h-max"
+		class="rounded-xl shadow-xl max-h-max"
 	/>
 	<section class="m-4">
 		<h1 class="text-4xl font-serif">About our shelter</h1>
