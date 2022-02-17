@@ -4,7 +4,7 @@
 	import 'swiper/css';
 	import MdArrowForward from 'svelte-icons/md/MdArrowForward.svelte';
 	import MdArrowBack from 'svelte-icons/md/MdArrowBack.svelte';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	// Required to use onMount because swiper
 	let swiper = null;
@@ -18,10 +18,8 @@
 			},
 			spaceBetween: 20
 		});
-	});
 
-	onDestroy(() => {
-		if (swiper) swiper.destroy();
+		return () => swiper.destroy();
 	});
 
 	const GoNext = () => {
@@ -36,12 +34,14 @@
 <div class="card-swiper">
 	<button
 		on:click={GoPrev}
-		class="w-14 border p-2 border-pr-accent rounded-full shadow-sm \
+		class="hidden md:block w-14 border p-2 border-pr-accent rounded-full shadow-sm \
 			 transition-all duration-500 ease-in-out hover:bg-pr-accent hover:shadow-lg active:shadow-inner"
 	>
 		<MdArrowBack />
 	</button>
 	<div id="swiper">
+		<div class="fade-overlay out" />
+		<div class="fade-overlay in" />
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<CardSwiperCard
@@ -89,8 +89,9 @@
 	</div>
 	<button
 		on:click={GoNext}
-		class="w-14 border p-2 border-pr-accent rounded-full shadow-sm \
-			 transition-all duration-500 ease-in-out hover:bg-pr-accent hover:shadow-lg active:shadow-inner"
+		class="hidden md:block w-14 border p-2 border-pr-accent rounded-full shadow-sm \
+			 transition-all duration-500 ease-in-out \
+		   hover:bg-pr-accent hover:shadow-lg active:shadow-inner"
 	>
 		<MdArrowForward />
 	</button>
@@ -109,9 +110,29 @@
 		height: max-content;
 		overflow: hidden;
 		padding: 0 20px;
+		position: relative;
 	}
 
 	.swiper-wrapper {
 		padding: 40px 0;
+	}
+
+	.fade-overlay {
+		position: absolute;
+		top: 0;
+		width: 5%;
+		height: 100%;
+		/* height: 60rem; */
+		z-index: 30;
+	}
+
+	.out {
+		left: 0;
+		@apply bg-gradient-to-r from-bg-gray to-transparent;
+	}
+
+	.in {
+		right: 0;
+		@apply bg-gradient-to-l from-bg-gray to-transparent;
 	}
 </style>
