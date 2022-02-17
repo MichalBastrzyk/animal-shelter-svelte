@@ -31,7 +31,7 @@
 </div>
 <Layout>
 	<img
-		src="images/dog-outsitde-car-window.jpg"
+		src="images/dog-outside-car-window.jpg"
 		alt="Dog outside car window"
 		class="rounded-xl shadow-xl max-h-max"
 	/>
