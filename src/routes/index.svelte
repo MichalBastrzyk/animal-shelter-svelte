@@ -3,6 +3,7 @@
 	import Layout from '../components/Layout.svelte';
 	import ActionButton from '../components/ActionButton.svelte';
 	import CardSwiperApi from '../components/CardSwiperAPI.svelte';
+	import FaCreditCard from 'svelte-icons/fa/FaCreditCard.svelte';
 </script>
 
 <svelte:head>
@@ -57,5 +58,28 @@
 	<h1>You can help our shelter by</h1>
 </Layout>
 <Layout bgColor="bg-bg-gray">
-	<h1>In addition you can make a donation</h1>
+	<div class="flex flex-col m-auto lg:flex-row">
+		<div class="sm:max-w-[1020px] sm:h-1/2">
+			<img src="images/dog-laying-down.png" alt="Dog laying down" />
+		</div>
+		<div class="flex flex-col items-center lg:items-start">
+			<h1 class="text-3xl font-serif font-black text-gray-800">
+				In addition you can make a donation
+			</h1>
+			<div class="my-5">
+				<h2 class="text-xl font-serif text-gray-700">Name of the bank / Type of bank account</h2>
+				<div class="flex max-w-sm p-2 bg-pr-accent items-center justify-evenly rounded-xl">
+					<div class="w-8 h-8">
+						<FaCreditCard />
+					</div>
+					<pre class="px-2 sm:text-xl">8380 2880 8028 8791 7435</pre>
+				</div>
+			</div>
+			<p class="italic text-gray-600">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime iure adipisci, minima,
+				dolores a laborum minus voluptate molestias maiores ratione voluptatem reprehenderit,
+				recusandae assumenda
+			</p>
+		</div>
+	</div>
 </Layout>
