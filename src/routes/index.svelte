@@ -4,6 +4,7 @@
 	import ActionButton from '../components/ActionButton.svelte';
 	import CardSwiperApi from '../components/CardSwiperAPI.svelte';
 	import FaCreditCard from 'svelte-icons/fa/FaCreditCard.svelte';
+	import IconWithDesc from '../components/SVG/IconWithDesc.svelte';
 </script>
 
 <svelte:head>
@@ -55,7 +56,32 @@
 	</div>
 </section>
 <Layout>
-	<h1>You can help our shelter by</h1>
+	<div class="flex flex-col">
+		<h1 class="text-3xl w-[250px] m-auto my-4 text-center font-serif font-medium">
+			Than you can help our shelter
+		</h1>
+		<div class="flex justify-evenly">
+			<IconWithDesc src="images/icons/icons8-pet-food-64.png" alt="" description="Pet food" />
+			<IconWithDesc
+				src="images/icons/icons8-ambulance-50.png"
+				alt=""
+				description="Transportation"
+			/>
+			<IconWithDesc src="images/icons/icons8-tennis-ball-50.png" alt="" description="Toys" />
+			<IconWithDesc src="images/icons/icons8-pet-bowl-64.png" alt="" description="Bowls and cups" />
+			<IconWithDesc src="images/icons/icons8-shampoo-60.png" alt="" description="Shampoos" />
+		</div>
+		<div class="flex justify-evenly">
+			<IconWithDesc src="images/icons/icons8-pills-50.png" alt="" description="Vitamins" />
+			<IconWithDesc src="images/icons/icons8-syringe-64.png" alt="" description="Medicines" />
+			<IconWithDesc
+				src="images/icons/icons8-dog-collar-50.png"
+				alt=""
+				description="Collars / leashes"
+			/>
+			<IconWithDesc src="images/icons/icons8-dog-house-64.png" alt="" description="Sleeping area" />
+		</div>
+	</div>
 </Layout>
 <Layout bgColor="bg-bg-gray">
 	<div class="flex flex-col m-auto lg:flex-row">
