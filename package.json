@@ -26,6 +26,7 @@
 	"type": "module",
 	"dependencies": {
 		"svelte-icons": "^2.1.0",
+		"svelte-inview": "^3.0.0",
 		"swiper": "^7.4.1"
 	}
 }
